@@ -78,7 +78,8 @@ export default {
     },
   },
   server: {
-    host: "0",
+    // Bind to all network interfaces
+    host: "0.0.0.0",
   },
   "nuxt-compress": {
     gzip: {
