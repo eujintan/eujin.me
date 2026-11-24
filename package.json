@@ -1,31 +1,31 @@
 {
-  "name": "eujin.me",
-  "version": "1.0.0",
-  "description": "Npm package list for eujin.me",
+  "name": "eujin-tinder-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start"
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc --noEmit",
+    "test": "vitest run",
+    "deploy": "npm run build && wrangler deploy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tan-Eu-Jin/eujin.me.git"
-  },
-  "keywords": [
-    "eujin.me"
-  ],
-  "author": "Tan Eu Jin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tan-Eu-Jin/eujin.me/issues"
-  },
-  "homepage": "https://github.com/Tan-Eu-Jin/eujin.me#readme",
   "dependencies": {
-    "@nuxtjs/google-gtag": "^1.0.4",
-    "@nuxtjs/vuetify": "^1.12.3",
-    "nuxt": "^2.2.0",
-    "nuxt-compress": "^5.0.0",
-    "typewriter-effect": "^2.18.2"
+    "@astrojs/react": "^5.0.0",
+    "astro": "^6.0.0",
+    "lucide-react": "^0.468.0",
+    "posthog-js": "^1.454.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@playwright/test": "^1.65.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "wrangler": "^4.0.0"
   }
 }
