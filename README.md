@@ -1,4 +1,4 @@
-# eujin.me — Entire Portfolio as a Tinder-style Mock App
+# eujin.me - Entire Portfolio as a Tinder-style Mock App
 
 A swipe-first portfolio, deliberately presented as a dating-app interface. No traditional portfolio homepage or separate marketing site. All sections live inside the app shell:
 

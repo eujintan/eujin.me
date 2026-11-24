@@ -1,0 +1,3 @@
+import {useEffect,useState} from 'react';
+import {LIKES_KEY,parseIds,parseShared} from '../lib/likes';
+export function useLikes(ids:string[]){const [liked,setLiked]=useState<string[]>([]);const [ready,setReady]=useState(false);useEffect(()=>{let stored:string[]=[];try{stored=parseIds(localStorage.getItem(LIKES_KEY),ids)}catch{}const search=window.location.search;setLiked(new URLSearchParams(search).has('liked')?parseShared(search,ids):stored);setReady(true)},[ids]);useEffect(()=>{if(ready)try{localStorage.setItem(LIKES_KEY,JSON.stringify(liked))}catch{}},[liked,ready]);return {liked,setLiked};}
