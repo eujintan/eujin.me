@@ -1,50 +1,47 @@
-# **_EUJIN[]().ME_**
+# eujin.me — Entire Portfolio as a Tinder-style Mock App
 
-## **_Purpose_**
+A swipe-first portfolio, deliberately presented as a dating-app interface. No traditional portfolio homepage or separate marketing site. All sections live inside the app shell:
 
-This website is a side project worked on in my free time to provide myself the following:
+- **Discover:** swipe project cards left to skip, right to save; keyboard arrows; Undo; replay.
+- **Your likes:** locally persisted project shortlist, remove items, share a URL with selected IDs.
+- **The profile:** about Eu Jin, professional strengths and separate Game Production / Engineering resume views.
+- **Messages:** a chat-like contact screen linking to LinkedIn (it does not imply an actual messaging backend).
+- **Project details:** accessible via the information button on each card and the shortlist.
 
-- hands-on experience dealing with the ins and out of multiple and different web development framework.
-- creating a simple webserver hosting experience with cloud services.
-- this gives me a neat little personal website.
+## Development
 
-## **_Tech_**
-
-[**Digital Ocean**](https://www.digitalocean.com/) _Ubuntu 18.04.3 (LTS) x64_ - Virtual machine hosting and whatnots.
-
-[**Nginx**](https://www.nginx.com/) _1.14.0 (Ubuntu)_ - Web server configurations and all thing configs.
-
-[**Node**](https://nodejs.org/en/) _v16.13.0_ - Makes all the following Javascript library tick properly.
-
-[**NPM**](https://www.npmjs.com/) _v6.14.4_ - Lets you get node packages easily. You will need npm to get the other packages.
-`Note: NVM (Node Version Manager) can be used to ease the installation of NPM (Node Package Manage)`
-
-[**NuxtJS**](https://nuxtjs.ir/) _v2.2.0_ - The Javascript framework for web development.
-
-[**VueJS**](https://vuejs.org/) _v2.6.14_- Frontend library shipped with NuxtJS.
-
-[**Vuetify**](https://vuetifyjs.com/en/) _v2.6.2_ - Material design library add-on for NuxtJS.
-
-[**Google Analytics via Google Tags**](https://www.npmjs.com/package/@nuxtjs/google-tag-manager) _v2.3.2_ - The project uses the nuxt/google-tag-manage module as an extention to handle all things analytics.
-
-[**Backend**]() - I'll think of something soon, maybe... Need ideas. Open for suggestions.
-
-## **_Set Up_**
-
-This section assumes that this project is set up in a local environment. Since this is a full **NodeJs** project, only npm is needed to set up and compile the project. Due to the configuration inside this project, this project will always serve on the ip of the computer.
-
-Run the following set of commands in the terminal, inside the project directory.
-`Note: This is not a comprehensive and production-ready set up. Lets you run this project on your local machine.`
-
-```
-$ cd ~/eujin.me/
-$ npm install
-$ npm run build
-$ npm start
+```bash
+npm install
+npm run dev
+npm run check
+npm test
+npm run build
 ```
 
-###### **_Take Aways_**
+Production build output: `dist/`.
 
-This has been a really fun side project for me to work on. I will be willing to fix up any issues that persist or develop any features that are requested but they will be developed at my own pace. Pull reqeusts are welcomed.
+## Cloudflare
 
-It is my hope that anybody and everybody can clone this project and set up a page for themselves, change the title, names and details _`(cause it'll be weird if you don't)`_ and then have a little fun personal website.
+`wrangler.jsonc` is configured for Workers Static Assets. When ready, connect the repository to Cloudflare Workers Builds with `npm run build` and `dist` as the assets directory, or run `npm run deploy` after setting up Wrangler authentication. **Do not deploy until content and external links have been reviewed.**
+
+## Content / editing
+
+- Project cards: `src/data/portfolio.ts`
+- Site layout and interactions: `src/components/App.tsx`
+- App styling: `src/styles.css`
+- Shortlist logic: `src/lib/likes.ts`
+
+## IMPORTANT: Before publishing
+
+1. The four card illustrations are **designed typographic placeholders**, not screenshots. Add licensed/approved actual game screenshots; do not misrepresent them.
+2. Confirm project claims, especially release dates, outcomes and development timelines. The W.A.M timeline is marked for confirmation.
+3. Confirm the LinkedIn URL and add a public contact email if desired.
+4. Add verified game-production and engineering resume PDFs only after reviewing their contents.
+5. The mock chat does **not** send messages; the CTA opens LinkedIn. The '98% match' badge is labeled as a design joke.
+6. The shortlist is stored only in the visitor's browser; sharing puts project IDs into the link.
+
+No backend, database, third-party tracking or public deployment is included.
+
+## Design adjustment
+
+The decorative floating text and doodles to the left and right of the Discover card deck have been removed. The card stack is now centered. All app screens and swipe controls remain unchanged.
