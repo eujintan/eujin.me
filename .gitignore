@@ -5,3 +5,19 @@ dist/
 .env*
 !.env.example
 .DS_Store
+
+# Cloudflare
+.wrangler/
+
+# Coverage
+coverage/
+
+# Logs
+*.log
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+playwright/.auth/
+blob-report/
